@@ -1,4 +1,4 @@
-# X-Pammer Tool [![Developed by Joshua Alcantara](https://img.shields.io/badge/Developed%20by-Waren%20Gonzaga-blue.svg?longCache=true&style=for-the-badge)](https://facebook.com/IamPseudoX)
+# X-Pammer Tool [![Developed by Joshua Alcantara](https://img.shields.io/badge/Developed%20by-Joshua%Alcantara-red.svg?longCache=true&style=for-the-badge)](https://facebook.com/IamPseudoX)
 
     Created by Pseudo-X [2019 Spammer Tool - Re-developed ]
 
