@@ -33,4 +33,4 @@ python2 xpammer.py
 [![Support](https://img.shields.io/badge/Support-Buy%20Me%20A%20Coffee-orange.svg?style=for-the-badge)](https://buymeacoff.ee/IamPseudoX)
 
 # Follow Me 
-Facebook : /IamPseudoX
+[![Follow](https://img.shields.io/badge/Follow%20Me-IamPseudoX-critical?longCache=true&style=for-the-badge)
