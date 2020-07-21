@@ -11,14 +11,14 @@ import os
 import sys
 import getpass
 import smtplib
+from time import sleep
 
-
-filtechColorGrey = '\033[40m'
-filtechColorLightGrey = '\033[40m'
-
+sudoColorGrey = '\033[40m'
+sudoColorLightGrey = '\033[40m'
+sudoSpammMessage = "\n\033[1;31;40m Sending Spam Mail to the Victim !.. \033[0m"
 if len(sys.argv) < 2:
     os.system("cls||clear")
-    sys.stdout.write(filtechColorGrey+"""         
+    sys.stdout.write(sudoColorGrey+"""         
 
 ██╗  ██╗     ██████╗  █████╗ ███╗   ███╗███╗   ███╗███████╗██████╗ 
 ╚██╗██╔╝     ██╔══██╗██╔══██╗████╗ ████║████╗ ████║██╔════╝██╔══██╗
@@ -28,49 +28,54 @@ if len(sys.argv) < 2:
 ╚═╝  ╚═╝     ╚═╝     ╚═╝  ╚═╝╚═╝     ╚═╝╚═╝     ╚═╝╚══════╝╚═╝  ╚═╝
     Created by Pseudo-X [2019 Spammer Tool - Re-developed ]
 
-\n"""+filtechColorLightGrey)
+\n"""+sudoColorLightGrey)
 
 else:
-    sys.exit("Usage: python filtech-spammer.py")
+    sys.exit("Usage: python xspammer.py")
     os.system("cls||clear")
 
-print("[ How to use in Computer : python FiltechSpammer.py ] \n")
-print("[ How to use in Termux : python2 FiltechSpammer.py ] \n")
+print("\033[1;31;40m[ How to use in Windows / Linux : \033[1;33;40m python xpammer.py \033[0m \033[1;31;40m]\033[0m")
+print("\033[1;31;40m[ How to use in Termux : \033[1;33;40m python2 xpammer.py \033[0m \033[1;31;40m]\033[0m \n")
 
-sudoEmail = input("Please Enter your Email Address Here :")
-sudoPassword = getpass.getpass("Enter your Password :")
-sudoVictim = input("Victim Email Address : ")
-sudoMessage = input("Your Message to your Victim : ")
-sudoSubject = input("Enter Subject : ")
+sudoEmail = input("\033[1;32;40m Please Enter your Email Address Here : \033[0m")
+sudoPassword = getpass.getpass("\033[1;32;40m Please Enter your Password : \033[0m")
+sudoVictim = input("\033[1;32;40m Please Enter Victim Email Address : \033[0m ")
+sudoMessage = input("\033[1;32;40m Type Your Message to your Victim :  \033[0m")
+sudoSubject = input("\033[1;32;40m Type Subject / Title : ")
 sudoMessageSubmit = 'Subject: {}\n\n{}'.format(sudoSubject, sudoMessage)
-sudoSpam = int(input("Spam Count :"))
+sudoSpam = int(input("\033[1;32;40m Enter Number of Spam to be Sent :  (example : 50) : \033[0m"))
 
+# Connecting to Server 
 try:
-    filtech_smtp = 'smtp.gmail.com'
-    filtechPort = 587
+    sudo_smtp = 'smtp.gmail.com'
+    sudoPort = 587
+    sudoServer = smtplib.SMTP(sudo_smtp,sudoPort)
+    sudoServer.ehlo()
+    sudoServer.starttls()
+    sudoServer.login(sudoEmail, sudoPassword)
 
-    filtechServer = smtplib.SMTP(filtech_smtp,filtechPort)
-    filtechServer.ehlo()
-    filtechServer.starttls()
-    filtechServer.login(sudoEmail, sudoPassword)
 
-    print("[-] // Spamming .......... Please Wait ...... [-] \n")
+    for char in sudoSpammMessage:
+        sleep(0.3)
+        sys.stdout.write(char)
+        sys.stdout.flush()
 
-    filtech = 0
-    while filtech < sudoSpam:
-        filtech += 1
-        filtechServer.sendmail(sudoEmail, sudoVictim, sudoMessageSubmit)
-    if filtech == 1:
-        print(" %dst Email Sent Successfully!" % (filtech))
-    elif filtech == 2:
-        print(" %dnd Email Sent Successfully!" % (filtech))
-    elif filtech == 3:
-        print(" %drd Email Sent Successfully!" % (filtech))
+    sudoX = 0
+    while sudoX < sudoSpam:
+        sudoX += 1
+        sudoServer.sendmail(sudoEmail, sudoVictim, sudoMessageSubmit)
+    if sudoX == 1:
+        print("\n%d Email Spam Successfully Send to the Victim!" % (sudoX))
+    elif sudoX == 2:
+        print("\n%d Email Spam Successfully Send to the Victim!" % (sudoX))
+    elif sudoX == 3:
+        print("\n%d Email Spam Successfully Send to the Victim!" % (sudoX))
     else:
-        print(" %dth Email Sent Successfully!" % (filtech))
+        print("\n%d Email Spam Successfully Send to the Victim!" % (sudoX))
+
     sys.stdout.flush()
-    filtechServer.quit()
-    print("Spamming Done!")
+    sudoServer.quit()
+    print("\n \033[1;32;40m You've successfully Spam the Victim <3 \033[0m")
 
 except KeyboardInterrupt:
     print()
@@ -78,6 +83,6 @@ except KeyboardInterrupt:
     sys.exit()
 
 except smtplib.SMTPAuthenticationError:
-    print("The username or password did you entered is incorrect")
-    print("or Check your Gmail option if 'Less Secure' is enable to use this Spammer. ")
+    print("\n \033[1;31;40mThe Email or Password is Incorrect ! \033[0m")
+    print("\033[0;37;40m Tip : You must need to enable the \033[0m \033[1;33;40m'LESS SECURE'\033[0m  \033[0;37;40m on your Gmail Account to use / run this Tool! \033[0m")
     sys.exit()
