@@ -33,4 +33,4 @@ python2 xpammer.py
 [![Support](https://img.shields.io/badge/Support-Buy%20Me%20A%20Coffee-orange.svg?style=for-the-badge)](https://buymeacoff.ee/IamPseudoX)
 
 ## Subscribe  
-[![Subscribe](https://img.shields.io/badge/Follow%20Me-IamPseudoX-critical?longCache=true&style=for-the-badge)](https://www.youtube.com/channel/UCfh76xu86WS4boXVK23_zDg)
+[![Subscribe](https://img.shields.io/badge/Subscribe%20to%20my%20channel-IamPseudoX-critical?longCache=true&style=for-the-badge)](https://www.youtube.com/channel/UCfh76xu86WS4boXVK23_zDg)
