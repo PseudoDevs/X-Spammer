@@ -32,5 +32,5 @@ python2 xpammer.py
 
 [![Support](https://img.shields.io/badge/Support-Buy%20Me%20A%20Coffee-orange.svg?style=for-the-badge)](https://buymeacoff.ee/IamPseudoX)
 
-# Follow Me 
-[![Follow](https://img.shields.io/badge/Follow%20Me-IamPseudoX-critical?longCache=true&style=for-the-badge)
+## Subscribe  
+[![Subscribe](https://img.shields.io/badge/Follow%20Me-IamPseudoX-critical?longCache=true&style=for-the-badge)](https://www.youtube.com/channel/UCfh76xu86WS4boXVK23_zDg)
