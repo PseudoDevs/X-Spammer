@@ -34,8 +34,7 @@ else:
     sys.exit("Usage: python xspammer.py")
     os.system("cls||clear")
 
-print("\033[1;31;40m[ How to use in Windows / Linux : \033[1;33;40m python xpammer.py \033[0m \033[1;31;40m]\033[0m")
-print("\033[1;31;40m[ How to use in Termux : \033[1;33;40m python2 xpammer.py \033[0m \033[1;31;40m]\033[0m \n")
+print("\033[1;31;40m[ How to use in Windows / Linux / Termux : \033[1;33;40m python xpammer.py \033[0m \033[1;31;40m]\033[0m") 
 
 sudoEmail = input("\033[1;32;40m Please Enter your Email Address Here : \033[0m")
 sudoPassword = getpass.getpass("\033[1;32;40m Please Enter your Password : \033[0m")
@@ -84,5 +83,5 @@ except KeyboardInterrupt:
 
 except smtplib.SMTPAuthenticationError:
     print("\n \033[1;31;40mThe Email or Password is Incorrect ! \033[0m")
-    print("\033[0;37;40m Tip : You must need to enable the \033[0m \033[1;33;40m'LESS SECURE'\033[0m  \033[0;37;40m on your Gmail Account to use / run this Tool! \033[0m")
+    print("\033[0;37;40m Tip : You must need to enable the \033[0m \033[1;33;40m'LESS SECURE'\033[0m \033[0;37;40mon your Gmail Account to use / run this Tool! \033[0m")
     sys.exit()
