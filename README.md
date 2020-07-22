@@ -6,7 +6,7 @@
 
 Here's the basic usage of my Tool.
 
-## For Windows / Linux 
+## For Windows / Linux / Termux
 ```php
 
 git clone https://github.com/PseudoDevs/X-Spammer
@@ -14,17 +14,6 @@ git clone https://github.com/PseudoDevs/X-Spammer
 cd X-Spammer
 
 python xpammer.py
-
-```
-
-## For Termux Users
-```php
-
-git clone https://github.com/PseudoDevs/X-Spammer
-
-cd X-Spammer
-
-python2 xpammer.py
 
 ```
 
